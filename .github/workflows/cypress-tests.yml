@@ -26,4 +26,4 @@ jobs:
 
       # Run Cypress component tests
       - name: Run Cypress component tests
-        run: npm run test       
+        run: npm run test-component       
