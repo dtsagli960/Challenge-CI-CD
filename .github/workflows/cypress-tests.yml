@@ -18,8 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use the Node.js version your app requires
-          cache: 'npm'
+          node-version: 18 
 
       # Install dependencies
       - name: Install dependencies
@@ -27,4 +26,4 @@ jobs:
 
       # Run Cypress component tests
       - name: Run Cypress component tests
-        run: npm run test-component
+        run: npm run test-component       
