@@ -1,4 +1,3 @@
-name: Deploy to Render
 on:
   push:
     branches:
@@ -17,8 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
-
+          
       # Install dependencies
       - name: Install dependencies
         run: npm install
@@ -28,8 +26,10 @@ jobs:
         run: npm run build
 
       # Deploy to Render
-      - name: Deploy to Render
-        uses: render-actions/deploy@v1
-        with:
-          render-token: ${{ secrets.RENDER_TOKEN }} # Render API token
-          service-id: ${{ secrets.RENDER_SERVICE_ID }} # Render service ID
+      - name: Deploy to render
+        # Only run this step if the branch is main
+        if: github.ref == 'refs/heads/main'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
