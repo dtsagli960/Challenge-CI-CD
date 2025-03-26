@@ -21,3 +21,5 @@ This workflow is triggered on pull requests to the develop branch. It checks out
 1. **Install Dependencies**: Installs the project dependencies.
 2. **Build**: Compiles the TypeScript code.
 3. **Run Tests**: Runs the Cypress component tests.
+
+Test change
