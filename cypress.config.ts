@@ -9,8 +9,5 @@ export default defineConfig({
       bundler: 'vite',
       viteConfig,
     },
-  },
-  e2e: {
-    baseUrl: null,
   }
 });
