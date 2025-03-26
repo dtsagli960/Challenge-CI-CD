@@ -1,0 +1,35 @@
+name: Deploy to Render
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Install Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the application (if needed)
+      - name: Build the application
+        run: npm run build
+
+      # Deploy to Render
+      - name: Deploy to Render
+        uses: render-actions/deploy@v1
+        with:
+          render-token: ${{ secrets.RENDER_TOKEN }} # Render API token
+          service-id: ${{ secrets.RENDER_SERVICE_ID }} # Render service ID
