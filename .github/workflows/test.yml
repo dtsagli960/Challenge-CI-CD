@@ -26,4 +26,7 @@ jobs:
 
       # Run Cypress component tests
       - name: Cypress.io
-        uses: cypress-io/github-action@v6.7.16     
+        uses: cypress-io/github-action@v6.7.16 
+        with:
+          component: true
+          e2e: false
