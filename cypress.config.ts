@@ -9,5 +9,8 @@ export default defineConfig({
       bundler: 'vite',
       viteConfig,
     },
+  },
+  e2e: {
+    baseUrl: 'http://localhost:1234',
   }
 });
