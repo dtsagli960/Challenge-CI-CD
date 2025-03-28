@@ -20,4 +20,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm run test-component    
+    - run: npm run test-component
+    - run: npx github-actions-ctrf ctrf/ctrf-report.json
+
