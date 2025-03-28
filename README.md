@@ -23,3 +23,4 @@ This workflow is triggered on pull requests to the develop branch. It checks out
 3. **Run Tests**: Runs the Cypress component tests.
 
 Run tests
+
