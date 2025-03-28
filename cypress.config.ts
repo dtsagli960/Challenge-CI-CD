@@ -7,5 +7,10 @@ export default defineConfig({
       framework: 'react',
       bundler: 'vite',
     },
+    setupNodeEvents(on, config) {
+      new GenerateCtrfReport({
+        on,
+      })
+    }
   }
 });
